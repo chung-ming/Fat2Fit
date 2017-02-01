@@ -1,0 +1,110 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ming.fat2fit4.RunActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:statusBarColor="@android:color/transparent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/etOriginWidget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/etOrigin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Starting point"
+                android:maxLines="1"
+                android:textSize="14dp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/etDestinationWidget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/etDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Destination point"
+                android:maxLines="1"
+                android:textSize="14dp"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:backgroundTint="#FF000000">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find path"
+            android:background="@color/my_red"
+            android:textColor="@color/my_white"
+            android:id="@+id/btnFindPath" />
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="5dp"
+            map:srcCompat="@drawable/ic_directions"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 km"
+            android:id="@+id/tvDistance" />
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="5dp"
+            map:srcCompat="@drawable/ic_alarm"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 min"
+            android:id="@+id/tvDuration" />
+
+    </LinearLayout>
+</LinearLayout>

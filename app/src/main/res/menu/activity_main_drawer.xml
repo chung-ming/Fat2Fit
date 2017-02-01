@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_details"
+            android:icon="@drawable/ic_assignment_ind"
+            android:title="Personal Details" />
+        <item
+            android:id="@+id/nav_exercise"
+            android:icon="@drawable/ic_directions_bike"
+            android:title="Exercise" />
+        <item
+            android:id="@+id/nav_run"
+            android:icon="@drawable/ic_directions_run"
+            android:title="Run" />
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_forum"
+            android:title="Health Community Forum" />
+        <item
+            android:id="@+id/nav_chart"
+            android:icon="@drawable/ic_trending_up"
+            android:title="Activity Log" />
+    </group>
+
+    <item android:title="MORE">
+        <menu>
+            <item
+                android:id="@+id/nav_camera"
+                android:icon="@drawable/ic_camera_alt"
+                android:title="Snap a Pic" />
+            <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_photo_library"
+                android:title="Go to Gallery" />
+            <item
+                android:id="@+id/nav_change_password"
+                android:icon="@drawable/ic_lock_black"
+                android:title="Change Password" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit_to_app"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

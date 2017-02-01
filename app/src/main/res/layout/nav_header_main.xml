@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:gravity="bottom"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingTop="34dp"
+    android:paddingRight="12dp"
+    android:paddingLeft="12dp"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:weightSum="1">
+
+    <!--app:srcCompat="@android:drawable/sym_def_app_icon" />-->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:srcCompat="@mipmap/ic_profile_pic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/textView2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fat2Fit Health Monitoring"
+        android:paddingLeft="6dp"
+        android:textSize="20sp"
+        android:textColor="@color/my_white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:id="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

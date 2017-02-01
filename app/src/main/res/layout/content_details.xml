@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:statusBarColor="@android:color/transparent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ming.fat2fit4.DetailsActivity" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentStart="true">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextAgeWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Age (in years):"
+            android:ems="6"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextHeightWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextAgeWidget">
+        <EditText
+            android:id="@+id/editTextHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Height (in cm):"
+            android:ems="6"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextWeightWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextHeightWidget">
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Weight (in kg):"
+            android:ems="6"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextWeightWidget"
+            android:layout_marginTop="12dp"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:text="Male"
+                android:textSize="17sp"
+                android:ems="8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:paddingRight="@dimen/activity_vertical_margin"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:text="Female"
+                android:textSize="17sp"
+                android:ems="8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textViewBMI"
+            android:text="Input above details to calculate BMI."
+            android:textSize="16sp"
+            android:ems="12"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGender"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewCalorie"
+            android:text="Input above details to calculate Daily Calorie Intake."
+            android:textSize="16sp"
+            android:ems="12"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewBMI"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="18dp"/>
+
+        <Button
+            android:id="@+id/buttonSendToDatabase"
+            android:text="Calculate"
+            android:onClick="sendToDatabase"
+            android:background="@color/my_red"
+            android:textColor="@color/my_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewCalorie"
+            android:layout_alignParentEnd="true"
+            android:elevation="4dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/editTextGoalWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonSendToDatabase">
+            <EditText
+                android:id="@+id/editTextGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Set a personal goal (in kcal):"
+                android:ems="6"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_vertical_margin" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonGoal"
+            android:text="Confirm Goal"
+            android:onClick="sendGoal"
+            android:background="@color/my_red"
+            android:textColor="@color/my_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextGoalWidget"
+            android:layout_alignParentEnd="true"
+            android:paddingRight="6dp"
+            android:paddingLeft="6dp"
+            android:elevation="4dp"/>
+    </RelativeLayout>
+</RelativeLayout>

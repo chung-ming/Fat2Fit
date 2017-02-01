@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ming.fat2fit4">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_directions_bike_gray"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBpfK1tn40uqUp_C1To2Zzq-mvceTyBbK4" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ExerciseActivity"
+            android:label="List of Exercises"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DetailsActivity"
+            android:label="Personal Details"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".RunActivity"
+            android:label="Track Location"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChartActivity"
+            android:label="Activity Log"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChatHouseActivity"
+            android:label="Health Forum Topics"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChatRoomActivity"
+            android:label="Forum Room"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DashBoard"
+            android:label="Change Password"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ForgotPassword"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ming.fat2fit4.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+    </application>
+</manifest>
